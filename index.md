@@ -3,7 +3,7 @@
 
 <html>
     <head>
-        <meta http-equiv="refresh" content="0; URL=index.html" />
+        <!---<meta http-equiv="refresh" content="0; URL=module2_solution\index.html" />--->
     </head>
     <body>
         
