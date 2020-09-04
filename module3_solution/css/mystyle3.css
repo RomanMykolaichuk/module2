@@ -1,0 +1,35 @@
+.navbar-brand h1 { 
+
+    color: #000;
+    font-size: 1.5em;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-style: italic;
+    text-shadow: 1px 1px 1px #222;
+    margin-top: 0;
+    margin-bottom: 30px;
+    margin-left:0;
+    line-height: .75;
+
+}
+
+#category{
+
+    padding:10px 10px 10px 10px;
+    background-color: lightgrey;
+    border: 1px solid #000;
+    width: 100%;
+}
+.navbar-header{
+
+
+}
+#collapsable-nav {
+
+    font-size: 1.2em;
+    margin:auto;
+
+}
+#nav-list{
+
+}
