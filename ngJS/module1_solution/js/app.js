@@ -13,8 +13,8 @@
     M1Controller.$inject = ['$scope', '$filter'];
     function M1Controller($scope) {
         $scope.dishes = "";
-        $scope.message = "message";
-        $scope.color1='black';
+        $scope.message = "";
+        $scope.color1='blue';
 
         $scope.m1Click = function () {
             if ($scope.dishes.length === 0) {
