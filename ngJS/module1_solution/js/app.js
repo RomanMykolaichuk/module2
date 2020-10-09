@@ -14,19 +14,23 @@
     function M1Controller($scope) {
         $scope.dishes = "";
         $scope.message = "message";
+        $scope.color1='black';
 
         $scope.m1Click = function () {
             if ($scope.dishes.length === 0) {
                 $scope.message = "Please enter data first!";
-                
+                $scope.color1='red';
+
             } else {
-                
+                $scope.color1='green';
+                if($scope.dishes.length<4){$scope.message = "Enjoy!";}
+                else{$scope.message = "Too much!";}
             }
-            ;
 
 
 
-            $scope.message = 'clicked!';
+
+
 
         };
 
