@@ -14,7 +14,7 @@
     function M1Controller($scope) {
         $scope.dishes = "";
         $scope.message = "";
-        $scope.color1='blue';
+        $scope.color1='gray';
 
         $scope.m1Click = function () {
             if ($scope.dishes.length === 0) {
