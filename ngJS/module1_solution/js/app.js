@@ -15,6 +15,7 @@
         $scope.dishes = "";
         $scope.message = "";
         $scope.color1='gray';
+       
 
         $scope.m1Click = function () {
             if ($scope.dishes.length === 0) {
@@ -23,13 +24,17 @@
 
             } else {
                 $scope.color1='green';
-                if($scope.dishes.length<4){$scope.message = "Enjoy!";}
+                var i=0; var n=0;
+                var dd=$scope.dishes.split(',');
+                dd.forEach((function(value){                    
+                    if (value.trim().length>0){i++;}
+                    else {n++;}
+                }));
+                if(i<4){$scope.message = "Enjoy!";}
                 else{$scope.message = "Too much!";}
             }
-
-
-
-
+            
+            if(n){$scope.message+= ' ('+n+' empty dishe(s`) name(s) entered!)'}
 
 
         };
