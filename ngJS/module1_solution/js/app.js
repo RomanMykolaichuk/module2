@@ -34,7 +34,7 @@
                 else{$scope.message = "Too much!";}
             }
             
-            if(n){$scope.message+= ' ('+n+' empty dishe(s`) name(s) entered!)'}
+            if(n){$scope.message+= ' ('+n+' empty dishe(s`) name(s) entered!)';}
 
 
         };
