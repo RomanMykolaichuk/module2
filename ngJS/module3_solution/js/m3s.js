@@ -37,6 +37,7 @@
             promise
                     .then(function (response) {
                         ndc.found = response;
+                console.log(ndc.found);
                         ndc.showLoader = false;
                         ndc.showAlert = !ndc.found.length;
                     })
