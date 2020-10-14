@@ -24,7 +24,7 @@
                     </div>
                 </div>
 
-
+<!--
                 <div ng-repeat="item in ndc.found" class='row w-100'>
                     <div >
                         {{$index + 1}}. {{ item.name}}
@@ -37,10 +37,10 @@
                         </button>
                     </div>
                 </div>
-
+-->
                 <!-- found-items should be implemented as a component --> 
                 <found-items
-                    items="ndc.found"
+                    found="ndc.found"
                     remove-item="ndc.removeItem(index)"
                     ></found-items>
                 <div class="loader" ng-show="ndc.showLoader"></div>
