@@ -8,12 +8,12 @@
             .directive('foundItems', foundItems)
             .constant('ApiBasePath', 'https://davids-restaurant.herokuapp.com');
 
-    foundItems.$inject = [];
+    
     function foundItems() {
         return {
-            templateUrl: 'foundItemsList.html',
+            templateUrl: 'foundList.html',
             scope: {
-                items: '<',
+                found: '<',
                 removeItem: '&',
             },
             restrict: 'E',
@@ -23,30 +23,30 @@
     NarrowItDownController.$inject = ['MenuSearchService'];
 
     function NarrowItDownController(MenuSearchService) {
-        var menu = this;
-        menu.searchItem = '';
-        menu.showAlert = false;
-        menu.showLoader = false;
-        menu.found = [];
+        var ndc = this;
+        ndc.searchItem = '';
+        ndc.showAlert = false;
+        ndc.showLoader = false;
+        ndc.found = [];
 
-        menu.getItems = function (search) {
-            menu.showAlert = false;
+        ndc.getItems = function (search) {
+            ndc.showAlert = false;
             var promise = MenuSearchService.getMatchedMenuItems(search);
-            menu.showLoader = true;
+            ndc.showLoader = true;
 
             promise
                     .then(function (response) {
-                        menu.found = response;
-                        menu.showLoader = false;
-                        menu.showAlert = !menu.found.length;
+                        ndc.found = response;
+                        ndc.showLoader = false;
+                        ndc.showAlert = !ndc.found.length;
                     })
                     .catch(function (error) {
                         console.log(error);
                     });
         };
 
-        menu.removeItem = function (itemIndex) {
-            menu.found.splice(itemIndex, 1);
+        ndc.removeItem = function (itemIndex) {
+            ndc.found.splice(itemIndex, 1);
         };
     }
 

@@ -5,18 +5,14 @@ To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
 
-<h3>Menu items with matches:</h3>
-<ol>
-  
-    <li ng-repeat="item in narrow.found">
-    {{ item.name }}
-    <button ng-click="narrow.onRemove({index: $index});">Don't want this one!</button>
-  </li>
-  
-  
-</ol>
-
-<h3>the end</h3>
-<!--
-<div class="error" ng-if="list.cookiesInList()">WARNING! WARNING! COOKIES DETECTED!</div>
---!>
+<div ng-repeat="item in items">
+    <section>
+        {{$index + 1}}. {{ item.name}}
+    </section>
+    <button
+        class="btn btn-sm btn-warning"
+        ng-click="removeItem({index: $index});"
+        >
+        Don't want this one!
+    </button>
+</div>
