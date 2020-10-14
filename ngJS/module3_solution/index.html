@@ -1,25 +1,53 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <title>Narrow Down Your Menu Choice</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="styles/bootstrap.min.css">
-    <link rel="stylesheet" href="styles/styles.css">
-  </head>
-<body>
-   <div class="container">
-    <h1>Narrow Down Your Chinese Menu Choice</h1>
+    <head>
+        <title>Narrow Down Your Menu Choice</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="js/angular.min.js" type="text/javascript"></script>
+        <script src="js/m3s.js" type="text/javascript"></script>
+        <link href="styles/bootstrap.css" rel="stylesheet" type="text/css"/>
+        <link rel="stylesheet" href="styles/bootstrap.min.css">
+        <link rel="stylesheet" href="styles/styles.css">
+    </head>
+    <body ng-app="NarrowItDownApp">
+        <div class="container" ng-controller='NarrowItDownController as ndc'>
+            <div class="row">
+                <div class="col-12">
+                    <h1>Narrow Down Your Chinese Menu Choice</h1>
+                </div>
+                <div class="col-12 ">  
+                    <div class="form-group my-0">
+                        <input type="text" placeholder="search" class="form-control" ng-model='ndc.searchItem'>
+                    </div>
+                    <div class="form-group narrow-button">
+                        <button class="btn btn-primary" ng-click="ndc.getItems(ndc.searchItem)">Narrow It Down For Me!</button>
+                    </div>
+                </div>
 
-    <div class="form-group">
-      <input type="text" placeholder="search term" class="form-control">
-    </div>
-    <div class="form-group narrow-button">
-      <button class="btn btn-primary">Narrow It Down For Me!</button>
-    </div>
 
-    <!-- found-items should be implemented as a component -->
-    <found-items found-items="...." on-remove="...."></found-items>
-  </div>
+                <div class="col-12">
+                    <h3>Menu items with matches: </h3>
+                    <ol>
 
-</body>
+                        <li ng-repeat="menuItem in ndc.found">
+                           {{ menuItem.name}} 
+                            <button ng-click="ndc.removeItem({index: $index});">Don't want this one!</button>
+                        </li>
+
+
+                    </ol>
+
+                   
+                </div>
+
+                <!-- found-items should be implemented as a component  
+                <div class="col-12">
+                    <f-items 
+                        found="narrow.found"
+                        on-remove="narrow.onRemove(index)">
+                    </f-items>
+                </div> -->
+            </div>
+        </div>
+    </body>
 </html>
