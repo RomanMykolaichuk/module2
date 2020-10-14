@@ -25,28 +25,28 @@
                 </div>
 
 
-                <div class="col-12">
-                    <h3>Menu items with matches: </h3>
-                    <ol>
+                <div ng-repeat="item in ndc.found" class='row w-100'>
+                    <div >
+                        {{$index + 1}}. {{ item.name}}
 
-                        <li ng-repeat="menuItem in ndc.found">
-                           {{ menuItem.name}} 
-                            <button ng-click="ndc.removeItem({index: $index});">Don't want this one!</button>
-                        </li>
-
-
-                    </ol>
-
-                   
+                        <button
+                            class="btn btn-sm btn-info"
+                            ng-click="ndc.removeItem({index: $index});"
+                            >
+                            Don't want this one!
+                        </button>
+                    </div>
                 </div>
 
-                <!-- found-items should be implemented as a component  
-                <div class="col-12">
-                    <f-items 
-                        found="narrow.found"
-                        on-remove="narrow.onRemove(index)">
-                    </f-items>
-                </div> -->
+                <!-- found-items should be implemented as a component --> 
+                <found-items
+                    items="ndc.found"
+                    remove-item="ndc.removeItem(index)"
+                    ></found-items>
+                <div class="loader" ng-show="ndc.showLoader"></div>
+                <div ng-if="ndc.showAlert" class="alert alert-info" role="alert">
+                    Nothing found!
+                </div>
             </div>
         </div>
     </body>
