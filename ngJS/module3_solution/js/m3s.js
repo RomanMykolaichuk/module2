@@ -60,7 +60,7 @@
             searchTerm = searchTerm.trim().toLowerCase();
             return $http({
                 method: 'GET',
-                url: ApiBasePath + '/menu_items.json',
+                url: ApiBasePath + '/menu_items.json'
             })
                     .then(function (response) {
                         if (!searchTerm) {
